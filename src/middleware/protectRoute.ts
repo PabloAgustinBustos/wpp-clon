@@ -16,7 +16,9 @@ declare global {
   }
 }
 
+// Verifica el token y verifica que el usuario exista
 const protectRoute = async(req: Request, res: Response, next: NextFunction) => {
+  console.log("protectRoute")
   try {
     const token = req.cookies.token
 

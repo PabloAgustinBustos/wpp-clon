@@ -10,3 +10,6 @@ authRouter.post("/logout", logout)
 authRouter.post("/signup", signup)
 
 export default authRouter
+
+// https://www.youtube.com/watch?v=vL24eiwAG_g
+// 1:14:44
