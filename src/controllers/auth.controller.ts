@@ -30,6 +30,8 @@ export const signup = async(req: Request, res: Response) => {
   try {
     const { fullname, username, password, confirmPassword, gender } = req.body
 
+    console.log(req.body)
+
     if (!fullname || !username || !password || !confirmPassword || !gender) return res.status(400).json({
       error: "Please fill in all fields"
     })

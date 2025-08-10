@@ -10,6 +10,8 @@ export const sendMessage = async(req: Request, res: Response) => {
 
     const senderID = req.user.id
 
+    console.log(`sender: ${senderID}\nreceiver: ${receiverID}`)
+
     // busca a ver si ya hay una conversación
     let conversation = await prisma.conversation.findFirst({
       where: {
@@ -85,7 +87,9 @@ export const getMessage = async(req: Request, res: Response) => {
     console.log(conversation)
 
     if (!conversation) {
-      return res.status(200).json([])
+      return res.status(200).json({
+        messages: []
+      })
     }
 
     return res.status(200).json({

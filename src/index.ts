@@ -15,6 +15,8 @@ app.use(cookieParser())
 app.use("/api/auth", authRoutes)
 app.use("/api/messages", messageRoutes)
 
-app.listen(3001, () => {
-  console.log("listening on 3001")
+const PORT = process.env.PORT
+
+app.listen(PORT, () => {
+  console.log(`Listening on ${PORT}`)
 })
