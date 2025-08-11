@@ -7,7 +7,7 @@ dotenv.config()
 import authRoutes from "./routes/auth.routes"
 import messageRoutes from "./routes/message.routes"
 
-const app = express()
+import { app, httpServer } from "./socket/socket"
 
 app.use(express.json())
 app.use(cookieParser())
@@ -17,6 +17,6 @@ app.use("/api/messages", messageRoutes)
 
 const PORT = process.env.PORT
 
-app.listen(PORT, () => {
+httpServer.listen(PORT, () => {
   console.log(`Listening on ${PORT}`)
 })
